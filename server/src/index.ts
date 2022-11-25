@@ -13,9 +13,10 @@ APP.use( cors() )
 
 Mongoose
   .connect( process.env.MONGO_DB as string, () => {
-    console.log( 'Database is running...' )
+    const dbFolder = process.env.MONGO_DB?.split( '/' )
+    console.log( `Jake's List is reading/writing data at 'db://${ dbFolder![ dbFolder!.length - 1 ]}'` )
   } )
 
 APP.listen( PORT, () => {  
-  console.log(`Jake's List API live on port ${ PORT }`)
+  console.log(`Jake's List API is live on port ${ PORT }`)
 })

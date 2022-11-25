@@ -1,6 +1,6 @@
 import Mongoose from 'mongoose'
 
-const GroceryItemSchema = new Mongoose.Schema({
+const GroceryItem = new Mongoose.Schema({
   name: {
     type: String
   },
@@ -9,3 +9,5 @@ const GroceryItemSchema = new Mongoose.Schema({
     required: true
   }
 })
+
+export const GroceryItemModel = Mongoose.model( 'GroceryItem', GroceryItem )
